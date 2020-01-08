@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<body>
+    <div class="welcome-container">
+        <div class="welcome-left">
+            <div class="welcome-text">
+                <h2>Welcome to the Spartan Training Room</h2>
+                <p>Here you will train and prepare yourself for your selected course stream. There will be tasks set which will provide a starting foundation that will prepare you on your journey on becoming a fully-fledged spartan. Good luck!</p>
+            </div>
+        </div>
+        <div class="welcoming-right">
+            <div class="login-container">
+                <form id="login-form">
+                    <div class="form-group form-bar">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                               placeholder="Email">
+                    </div>
+                    <div class="form-group form-bar">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="buttons">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    .body { 
+        background: linear-gradient(90deg, rgba(146,6,41,1) 0%, rgba(134,25,52,1) 35%, rgba(95,12,83,1) 100%) !important;
+    }
+    .welcome-container {
+        background-color: white;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .welcome-left {
+        background-color: white;
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .welcome-right {
+        background: linear-gradient(90deg, rgba(146,6,41,1) 0%, rgba(134,25,52,1) 35%, rgba(95,12,83,1) 100%);
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+
+    #login-form {
+        margin: 25vh;
+    }
+
+    .form-bar input {
+        width: 32vw;
+    }
+
+
+    #buttons {
+        color: white;
+        background-color: #E33661;
+        border: 1px solid #E33661;
+        transition: 0.2s;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    #buttons:hover {
+        opacity: 70%;
+    }
+
+    .welcome-text {
+        font-size: 1.3em;
+        padding:  22vh 5vw;
+    }
+    .welcome-text p{
+        padding: 15px 0;
+    }
+
+    .welcome-text h2 {
+        color: #e33661;
+        font-size:2.6em;
+    }
+</style>
