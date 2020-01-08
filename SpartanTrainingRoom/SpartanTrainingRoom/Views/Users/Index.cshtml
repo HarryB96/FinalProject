@@ -4,8 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
-    <div class="container">
-        <button class="btn btn-primary button" onclick="location.href='@Url.Action("Create", "Users")'">Click New</button>
+    <div class="container main-container">
+        <button class="btn btn-primary create-new-button" onclick="location.href='@Url.Action("Create", "Users")'">Click New</button>
 
         <table class="table data-container">
             <thead>
@@ -86,13 +86,29 @@
 
 
 <style>
-    .button {
+    body {
+        background: linear-gradient(to right, #ffffff, #e33661);
+    }
+
+    .main-container {
+        width: 80%;
+        background-color: grey;
+        margin: auto;
+        margin-top: 5%;
+    }
+
+    .create-new-button {
         background-color: #E33661;
+        margin-bottom: 1%;
+        margin-left: 92.5%;
+    }
+
+    .create-new-button:hover {
+        background-color: #e86183;
     }
 
     .data-container {
         border: none;
         background-color: #f8f8f8;
-        width: 80%;
     }
 </style>
