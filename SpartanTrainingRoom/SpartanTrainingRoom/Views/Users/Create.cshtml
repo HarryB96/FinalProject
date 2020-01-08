@@ -13,7 +13,7 @@
 
     .register-left {
         text-align: center;
-        color: white;
+        color: black;
         padding: 30px;
     }
 
@@ -57,15 +57,15 @@
         float: right;
         border-radius: 1.5rem;
         width: 120px;
-        background: #f8f8f8;
+        background: #e33661;
         font-weight: 600;
-        color: #ffffff;
+        
         margin-top: 20px;
         padding: 10px;
     }
 
         .register-right .btn-primary:hover {
-            background: #ff57ff;
+            background: #e86183;
         }
     }
 </style>
@@ -78,10 +78,10 @@
                 <div class="col-md-5 register-left">
                     <h3>Join Us</h3>
                     <p> On Our Learning Enviroment</p>
-                    <button type="button" class="but btn-primary"> About us</button>
+                    <button type="button" class="but btn-primary" onclick="location.href='https://www.spartaglobal.com/about/'"> About us</button>
                 </div>
                 <div class="col-md-7 register-right">
-                    <h2>Register Here</h2>
+                    <h2>Register  Here</h2>
                     <div class="register-form">
                         <form asp-action="Create">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
