@@ -34,12 +34,7 @@ namespace SpartanTrainingRoom.Controllers
             return View();
         }
 
-        public IActionResult Questions()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
+       
 
 
         public IActionResult Privacy()
@@ -47,6 +42,12 @@ namespace SpartanTrainingRoom.Controllers
             return View();
         }
 
+        public IActionResult Questions()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
