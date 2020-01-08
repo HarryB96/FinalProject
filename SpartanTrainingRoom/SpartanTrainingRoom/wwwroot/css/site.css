@@ -8,8 +8,8 @@ body {
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* Carousel */
@@ -35,3 +35,27 @@ body {
         display: none;
     }
 }
+
+.container {
+    margin: 0;
+    width: 100%;
+}
+
+.navbar {
+    background-color: #010D0D;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    color: #E33661 !important;
+    transition: 0.5s;
+}
+
+
