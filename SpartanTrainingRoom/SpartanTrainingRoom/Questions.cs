@@ -76,7 +76,7 @@ namespace SpartanTrainingRoom
     //    Questions q5 = new Questions()
     //    {
     //        Qnumber = 5,
-    //        Question = "The result printed in console for the next program is ? \nint sum1 = 100 + 50;" +
+    //        Question = "The result printed in console for the next program is ? <br />int sum1 = 100 + 50;" +
     //        "\nint sum2 = sum1 + 250; \nConsole.WriteLine(sum2)",
     //        Choices = new string[] { "a) 250", "b) 150", "c) 400", "d) 500" },
     //        Answer = "c) 400",

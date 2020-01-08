@@ -2,89 +2,91 @@
 @{
     ViewData["Title"] = "Questions";
 }
-<h2>Questions</h2>
 
+<body>
 
-<div class="main-container">
-    <div class="side-navbar"> 
-    <a>Dashboard</a>
-    <a>Users</a>
-    <a>Tutorials</a>  
+    <div class="main-container">
+        
+
+        <div class="box-curved">
+            <div class="top">
+                <div class="question"><p>The result printed in console for the next program is? <br />int sum1 = 100 + 50;</p></div>
+            </div>
+            <div class="bottom">
+
+                <div class="textbox-curve">Question-curve</div>
+                <div class="textbox-curve">Question-curve</div>
+                <div class="textbox-curve">Question-curve</div>
+                <div class="textbox-curve">Question-curve</div>
+
+            </div>
+            <button class="nextButton" name="nextButton">Next</button>
+
+        </div>
     </div>
 
-    <div class="box-curved" >
-    <div class="top">
-        <div class="question-curve">Question</div>
-    </div>
-    <div class="bottom">
-
-        <div class="textbox-curve">Question-curve</div>
-        <div class="textbox-curve">Question-curve</div>
-        <div class="textbox-curve">Question-curve</div>
-        <div class="textbox-curve">Question-curve</div>
-
-
-    </div>
-    
-    </div>
-</div>
-
-
+</body>
 
 
 <style>
 
-    .main-container {
-       display:grid;
-       grid-template-columns:15% 75%;
-        background-color: #ccc;
-        height: 100vh;
-        
-    }
-
-     .side-navbar
-     {
-         background-color:grey;
-     }
-    .side-navbar a 
-    {
-        display:block;
-        font-size:25px;
-        text-align:center;
-        background-color:purple;
-
-    }
-
     
 
-    .top{
-        background-color:dimgrey;
-        height:30vh;
-       margin-bottom:4vh;
-       
+    .main-container {
+        display: grid;
+        grid-template-columns: 100% 0%;
+        background-color: white;
+        height: 100vh;
     }
 
-     .bottom{
-        background-color:dimgrey;
-        height:66vh;
+
+
+    .top {
+        background-color: white;
+        height: 30vh;
+        margin-bottom: 4vh;
     }
 
-     .question
-     {
-         background-color:purple;
-         margin-left:30px;
-         
-         
-     }
+    .bottom {
+        background-color: white;
+        height: 66vh;
+    }
 
-     .textbox-curve
-     {
-         background-color:blue;
-         border-radius:2vmin;
-     }
+    .question {
+        padding: 50px;
+        color: white;
+        font-size: 1.2em;
+        background-color: #383838;
+        margin: auto;
+        text-align: center;
+        height: 70%;
+    }
 
-     
+    .textbox-curve {
+        font-size: 1.4em;
+        background-color: #efefef;
+        border-radius: 1vmin;
+        display: inline-block;
+        width: 40%;
+        height: 20%;
+        margin-left: 5%;
+        margin-top: 2%;
+        text-align: center;
+    }
 
-     
+        .textbox-curve:hover {
+            background-color: #e33661;
+            transition: 0.5s;
+            color: white;
+        }
+        .nextButton
+        {
+            margin-left:50%;
+            height: 20%;
+            width: 20%;
+            
+        }
+
+        
 </style>
 
