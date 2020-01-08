@@ -4,80 +4,111 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+    <div class="container main-container">
+        <button class="btn btn-primary create-new-button" onclick="location.href='@Url.Action("Create", "Users")'">Click New</button>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserPassword)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CurrentScore)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaxScore)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TypeId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseId)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserPassword)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CurrentScore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaxScore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        <table class="table data-container">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserPassword)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CurrentScore)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MaxScore)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TypeId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CourseId)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserPassword)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CurrentScore)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MaxScore)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TypeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CourseId)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+<style>
+    body {
+        background: linear-gradient(to right, #ffffff, #e33661);
+    }
+
+    .main-container {
+        width: 80%;
+        background-color: grey;
+        margin: auto;
+        margin-top: 5%;
+    }
+
+    .create-new-button {
+        background-color: #E33661;
+        margin-bottom: 1%;
+        margin-left: 92.5%;
+    }
+
+    .create-new-button:hover {
+        background-color: #e86183;
+    }
+
+    .data-container {
+        border: none;
+        background-color: #f8f8f8;
+    }
+</style>
