@@ -9,9 +9,10 @@
 
     <div class="parent">
         <div class="div1">
+            
             <div class="course-container unlocked">
                 <div class="course-logo">
-                    <img src="~/images/logo/csharp.png" />
+                    <a asp-controller="Home" asp-action="Index"><img src="~/images/logo/csharp.png" /></a>
                 </div>
                 <div class="course-name">
                     <a asp-controller="Home" asp-action="Index">C#</a>
@@ -144,7 +145,7 @@
     }
 
     .course-container {
-        opacity: 45%;
+        opacity: 65%;
         padding: 25px;
         text-align: center;
         font-size: 2.5em;
