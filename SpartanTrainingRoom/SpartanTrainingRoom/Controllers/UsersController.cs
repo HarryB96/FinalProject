@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SpartanTrainingRoom.Models;
+using SpartanTrainingRoom.ViewModels;
 
 namespace SpartanTrainingRoom.Controllers
 {
@@ -17,6 +18,8 @@ namespace SpartanTrainingRoom.Controllers
         {
             _context = context;
         }
+
+        private readonly AdminViewModel adminViewModel;
 
         // GET: Users
         public async Task<IActionResult> Index()
@@ -172,16 +175,22 @@ namespace SpartanTrainingRoom.Controllers
                 }
                 else if (user.TypeId ==2)
                 {
-                    return View("Index");
+                    AdminViewModel adminViewModel = new AdminViewModel(_context.Users, _context.Course);
+                    return View("AdminDashboard",adminViewModel);
                 }
                 else
                 {
-                    return View("Index");
+                    return View("StudentDashboard");
                 }
             }
             else
                 return View("Login");
             
+        }
+        public IActionResult AdminDashboard()
+        {
+            AdminViewModel adminViewModel = new AdminViewModel(_context.Users, _context.Course);
+            return View(adminViewModel);
         }
     }
 }
