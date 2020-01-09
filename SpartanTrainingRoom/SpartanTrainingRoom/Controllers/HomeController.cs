@@ -5,11 +5,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SpartanTrainingRoom.Models;
+using SpartanTrainingRoom.ViewModels;
 
 namespace SpartanTrainingRoom.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly TrainingDbModel _context;
+        public HomeController(TrainingDbModel context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
             return View();
@@ -43,6 +49,12 @@ namespace SpartanTrainingRoom.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult AdminDashboard()
+        {
+            AdminViewModel adminViewModel = new AdminViewModel(_context.Users, _context.Course);
+            return View(adminViewModel);
         }
     }
 }
