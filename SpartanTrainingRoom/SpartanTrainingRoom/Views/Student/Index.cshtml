@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Courses</h2>
+
+<body>
+
+    <div class="parent">
+        <div class="div1">
+            
+            <div class="course-container unlocked">
+                <div class="course-logo">
+                    <a asp-controller="Home" asp-action="Index"><img src="~/images/logo/csharp.png" /></a>
+                </div>
+                <div class="course-name">
+                    <a asp-controller="Home" asp-action="Index">C#</a>
+                </div>
+                <div class="progess-container">0%</div>
+            </div>
+        </div>
+        <div class="div2">
+            <div class="course-container">
+                <div class="course-logo">
+                    <img src="~/images/logo/python.png" />
+                </div>
+                <div class="course-name">
+                    <a>Python</a>
+                </div>
+                <div class="progess-container">0%</div>
+            </div>
+        </div>
+        <div class="div3">
+            <div class="course-container">
+                <div class="course-logo">
+                    <img src="~/images/logo/sql.png" />
+                </div>
+                <div class="course-name">
+                    <a>SQL</a>
+                </div>
+                <div class="progess-container">0%</div>
+            </div>
+        </div>
+        <div class="div4">
+            <div class="course-container">
+                <div class="course-logo">
+                    <img src="~/images/logo/java.png" />
+                </div>
+                <div class="course-name">
+                    <a>Java</a>
+                </div>
+                <div class="progess-container">0%</div>
+            </div>
+        </div>
+        <div class="div5">
+            <div class="course-container">
+                <div class="course-logo">
+                    <img src="~/images/logo/js.png" />
+                </div>
+                <div class="course-name">
+                    <a>JavaScript</a>
+                </div>
+                <div class="progess-container">0%</div>
+            </div>
+        </div>
+        <div class="div6">
+            <div class="course-container">
+                <div class="course-logo">
+                    <img src="~/images/logo/html.png" />
+                </div>
+                <div class="course-name">
+                    <a>HTML</a>
+                </div>
+                <div class="progess-container">0%</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<style>
+
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .div1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .div2 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .div3 {
+        grid-area: 1 / 3 / 2 / 4;
+    }
+
+    .div4 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .div5 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .div6 {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+
+    h2 {
+        color: #e33661;
+    }
+
+    .course-name {
+        background-color: #121212;
+        margin: 0 61px;
+        color: white;
+        border: none;
+    }
+    .course-name a {
+        color: white;
+    }
+    .progess-container {
+        font-size:0.5em;
+        background-color: #1f1f1f;
+        color: white;
+        margin: 0 61px;
+    }
+
+    .course-container {
+        opacity: 65%;
+        padding: 25px;
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    .course-container .course-name a {
+        text-decoration: none;
+        color: white;
+
+    }
+
+
+    .course-container.unlocked:hover {
+        opacity: 100%;
+        transform:scale(1.1);
+        cursor: pointer;
+        transition: 0.5s;
+        color: #e33661;
+    }
+
+    .course-container.unlocked {
+        opacity: 100%;
+    }
+</style>
