@@ -23,7 +23,7 @@ CanAddAdmins BIT
 CREATE TABLE Course(
 
 CourseId INT NOT NULL IDENTITY PRIMARY KEY,
-CourseName NVARCHAR(50)
+Cours+eName NVARCHAR(50)
 )
 
 CREATE TABLE Users(
