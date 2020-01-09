@@ -1,0 +1,40 @@
+﻿@model SpartanTrainingRoom.Models.Course
+
+@{
+    ViewData["Title"] = "Video";
+}
+
+    <div class="main-container">
+        <h1>Course: C#</h1>
+        <div class="video-container">
+            <video width="900" height="550" src="~/video/CSharpVariable.mp4" controls="controls">
+                Your browser does not support the video tag
+            </video>
+        </div>
+
+        <h3>C# - Variables</h3>
+        <p>The variable in C# is nothing but a name given to a data value.</p>
+        <button class="btn btn-primary next-button" onclick="location.href='@Url.Action("Create", "Users")'">Next</button>
+    </div>
+
+
+<style>
+    body
+    {
+        background: linear-gradient( to right, #ffffff, #e33661);
+    }
+
+    .main-container {
+        padding-left: 17.5%;
+    }
+
+    .next-button {
+        background-color: #E33661;
+    }
+
+    .next-button:hover {
+        background-color: #e86183;
+    }
+
+</style>
+
