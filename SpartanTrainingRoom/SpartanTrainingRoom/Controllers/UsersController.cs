@@ -148,5 +148,40 @@ namespace SpartanTrainingRoom.Controllers
         {
             return _context.Users.Any(e => e.UserId == id);
         }
+
+        private bool UserExists(string email, string password, out User user)
+        {
+            var users = _context.Users.Select<User, User>(u => u).Where(u => u.Email == email && u.UserPassword == password);
+            user = users.FirstOrDefault();
+            return _context.Users.Any(e => e.Email == email && e.UserPassword == password);
+        }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View("Login");
+        }
+        [HttpPost]
+        public async Task<IActionResult> Verify(string email, string password)
+        {
+            User user = new User();
+            if (UserExists(email, password, out user))
+            {
+                if (user.TypeId == 3)
+                {
+                    return View("Index", await _context.Users.ToListAsync());
+                }
+                else if (user.TypeId ==2)
+                {
+                    return View("Index");
+                }
+                else
+                {
+                    return View("Index");
+                }
+            }
+            else
+                return View("Login");
+            
+        }
     }
 }

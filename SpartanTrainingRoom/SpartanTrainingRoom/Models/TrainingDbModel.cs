@@ -15,11 +15,5 @@ namespace SpartanTrainingRoom.Models
         public virtual DbSet<TypeOfUser> TypeOfUser { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Course> Course { get; set; }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<TypeOfUser>().Property(t => t.TypeName).IsRequired();
-        //    modelBuilder.Entity<Course>().Property(c => c.CourseName).IsRequired();
-        //}
     }
 }
