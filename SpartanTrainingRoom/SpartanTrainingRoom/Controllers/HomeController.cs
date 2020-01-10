@@ -109,6 +109,12 @@ namespace SpartanTrainingRoom.Controllers
 
             return View();
         }
+        public IActionResult Complete()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
 
 
         public IActionResult Privacy()

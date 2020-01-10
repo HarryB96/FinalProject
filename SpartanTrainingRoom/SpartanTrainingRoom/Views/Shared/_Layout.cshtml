@@ -27,14 +27,14 @@
                     <span class="icon-bar"></span>
                 </button>
                <img src="~/images/logo-white.png" style="width: 46px; float: left; margin-right: 10px; padding: 3px; margin-top: 1px;"/>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">SpartanTrainingRoom</a>
+                <a asp-area="" asp-controller="Users" asp-action="Login" class="navbar-brand">SpartanTrainingRoom</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="float: right;">
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Users" asp-action="Login">Login</a></li>
-                    <li><a asp-area="" asp-controller="Users" asp-action="Login">Logout</a></li>
+                    <li><a href="/Users/Login">Login</a></li>
+                    <li><a href="/Users/Login">Logout</a></li>
                 </ul>
             </div>
         </div>
