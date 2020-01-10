@@ -3,79 +3,110 @@
     ViewData["Title"] = "AdminDashboard";
 }
 
-<h2>AdminDashboard</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Courses)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Courses)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CourseName)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.CourseId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Users)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Users.Where(u=>u.TypeId==1))
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserPassword)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CurrentScore)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MaxScore)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TypeId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CourseId)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<body>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Courses)
 
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Courses)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CourseName)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.CourseId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Spartans
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Users.Where(u => u.TypeId == 1))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserPassword)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CurrentScore)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MaxScore)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TypeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CourseId)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+<style>
+    .container.body-content{
+        background: linear-gradient(to right, #ffffff, #e33661) !important;
+    }
+    .table-container {
+        background-color: grey;
+        padding: 25px;
+        width: 70%;
+        text-align: center;
+        margin: 50px auto;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .table {
+        margin: auto;
+        background-color: white;
+    }
+
+    
+</style>
