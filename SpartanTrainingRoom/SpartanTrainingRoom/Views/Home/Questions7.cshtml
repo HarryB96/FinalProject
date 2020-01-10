@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewData["Title"] = "Questions7";
+}
+
+<body>
+
+
+    <div class="main-container">
+
+
+        <div class="box-curved">
+            <div class="top">
+                <div class="question">
+                    <p>
+                        What is the function of \n?
+                    </p>
+                </div>
+            </div>
+
+            <div class="bottom">
+
+
+                <div class="textbox-curve">a) Backslash</div>
+                <div class="textbox-curve">b) New Line</div>
+                <div class="textbox-curve">c) Backspace</div>
+                <div class="textbox-curve">d) Tab</div>
+
+            </div>
+            <label for="name">Answer Here:</label>
+
+            <input type="text" id="name" name="name" required
+                   size="10">
+
+
+            <a class="nextQuestion" href="Questions8">Next Question</a>
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+
+
+<style>
+
+
+
+    .main-container {
+        display: grid;
+        grid-template-columns: 100% 0%;
+        background-color: white;
+        height: 80vh;
+    }
+
+
+
+    .top {
+        background-color: white;
+        height: 20vh;
+    }
+
+    .bottom {
+        background-color: white;
+        height: 60vh;
+    }
+
+    .question {
+        padding: 50px;
+        color: white;
+        font-size: 1.2em;
+        background-color: #383838;
+        margin: auto;
+        text-align: center;
+        height: 70%;
+    }
+
+    .textbox-curve {
+        font-size: 1.4em;
+        background-color: #efefef;
+        border-radius: 1vmin;
+        display: inline-block;
+        width: 40%;
+        height: 20%;
+        margin-left: 5%;
+        margin-top: 2%;
+        text-align: center;
+    }
+
+        .textbox-curve:hover {
+            background-color: #e33661;
+            transition: 0.5s;
+            color: white;
+        }
+
+    .nextQuestion {
+        float: right;
+        margin-bottom: 800px;
+        margin-right: 200px;
+        height: 30%;
+        width: 10%;
+        background-color: black;
+        text-decoration: none;
+        color: white;
+        border-bottom-color: deeppink;
+        transition: 0.5s;
+        text-align: center;
+        border-radius: 1vmin;
+    }
+
+        .nextQuestion:hover {
+            background-color: hotpink;
+            text-decoration: none;
+            text-decoration-color: none;
+        }
+
+    label {
+        display: block;
+        font: 1rem;
+        margin-left: 50%;
+        margin-bottom: 5px;
+    }
+
+    input,
+    label {
+        margin: .4rem 0;
+        margin-left: 50%;
+        margin-bottom: 5px;
+    }
+</style>
+
+
+
