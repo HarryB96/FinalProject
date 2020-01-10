@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SpartanTrainingRoom.Models;
+using SpartanTrainingRoom.ViewModels;
 
 namespace SpartanTrainingRoom.Controllers
 {
@@ -17,6 +18,8 @@ namespace SpartanTrainingRoom.Controllers
         {
             _context = context;
         }
+
+        private readonly AdminViewModel adminViewModel;
 
         // GET: Users
         public async Task<IActionResult> Index()
@@ -147,6 +150,47 @@ namespace SpartanTrainingRoom.Controllers
         private bool UserExists(int id)
         {
             return _context.Users.Any(e => e.UserId == id);
+        }
+
+        private bool UserExists(string email, string password, out User user)
+        {
+            var users = _context.Users.Select<User, User>(u => u).Where(u => u.Email == email && u.UserPassword == password);
+            user = users.FirstOrDefault();
+            return _context.Users.Any(e => e.Email == email && e.UserPassword == password);
+        }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View("Login");
+        }
+        [HttpPost]
+        public async Task<IActionResult> Verify(string email, string password)
+        {
+            User user = new User();
+            if (UserExists(email, password, out user))
+            {
+                if (user.TypeId == 3)
+                {
+                    return View("Index", await _context.Users.ToListAsync());
+                }
+                else if (user.TypeId ==2)
+                {
+                    AdminViewModel adminViewModel = new AdminViewModel(_context.Users, _context.Course);
+                    return View("AdminDashboard",adminViewModel);
+                }
+                else
+                {
+                    return View("StudentDashboard");
+                }
+            }
+            else
+                return View("Login");
+            
+        }
+        public IActionResult AdminDashboard()
+        {
+            AdminViewModel adminViewModel = new AdminViewModel(_context.Users, _context.Course);
+            return View(adminViewModel);
         }
     }
 }
