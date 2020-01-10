@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<SpartanTrainingRoom.Models.Questions>
 @{
     ViewData["Title"] = "Questions";
 
@@ -18,177 +18,183 @@
 
     //questions.Add(q1);
 
-/*@functions{
-    QuestionsE q1 = new QuestionsE()
-    {
-        Qnumber = 1,
-        Question = "What would be used to finish this line in C#: \nvar a = \"Alpha\"?",
-        Choices = new string[] { "a) ;", "b) ,", "c) :", "d) ." },
-        Answer = "a) ;",
-        Score = 10,
-        QuestionType = QuestionType.fillInGap
-    };
+    /*@functions{
+        QuestionsE q1 = new QuestionsE()
+        {
+            Qnumber = 1,
+            Question = "What would be used to finish this line in C#: \nvar a = \"Alpha\"?",
+            Choices = new string[] { "a) ;", "b) ,", "c) :", "d) ." },
+            Answer = "a) ;",
+            Score = 10,
+            QuestionType = QuestionType.fillInGap
+        };
 
 
-    QuestionsE q2 = new QuestionsE()
-    {
-        Qnumber = 2,
-        Question = "What type of variable is: 'p' ?",
-        Choices = new string[] { "a) string", "b) int", "c) bool", "d) char" },
-        Answer = "d) char",
-        Score = 10,
-        QuestionType = QuestionType.multipleChoice
-    };
-
-
-
-    QuestionsE q3 = new QuestionsE()
-    {
-        Qnumber = 3,
-        Question = "string a = \"John\" \n string b = \"Smith\" \nstring c = a + b \nWhat is the output of c",
-        Choices = new string[] { "a) JohnSmith", "b) John_Smith", "c) Smith_John", "d) John" },
-        Answer = "a) JohnSmith",
-        Score = 10,
-        QuestionType = QuestionType.fillInGap
-    };
+        QuestionsE q2 = new QuestionsE()
+        {
+            Qnumber = 2,
+            Question = "What type of variable is: 'p' ?",
+            Choices = new string[] { "a) string", "b) int", "c) bool", "d) char" },
+            Answer = "d) char",
+            Score = 10,
+            QuestionType = QuestionType.multipleChoice
+        };
 
 
 
-    QuestionsE q4 = new QuestionsE()
-    {
-        Qnumber = 4,
-        Question = "What Will Be The Result of the next arithmetic statement: \nint i = 5; i++",
-        Choices = new string[] { "a) 5", "b) 6", "c) 10", "d) 25" },
-        Answer = "b) 6",
-        Score = 10,
-        QuestionType = QuestionType.multipleChoice
-    };
+        QuestionsE q3 = new QuestionsE()
+        {
+            Qnumber = 3,
+            Question = "string a = \"John\" \n string b = \"Smith\" \nstring c = a + b \nWhat is the output of c",
+            Choices = new string[] { "a) JohnSmith", "b) John_Smith", "c) Smith_John", "d) John" },
+            Answer = "a) JohnSmith",
+            Score = 10,
+            QuestionType = QuestionType.fillInGap
+        };
 
 
 
-    QuestionsE q5 = new QuestionsE()
-    {
-        Qnumber = 5,
-        Question = "The result printed in console for the next program is ? <br />int sum1 = 100 + 50;" +
-        "\nint sum2 = sum1 + 250; \nConsole.WriteLine(sum2)",
-        Choices = new string[] { "a) 250", "b) 150", "c) 400", "d) 500" },
-        Answer = "c) 400",
-        Score = 10,
-        QuestionType = QuestionType.multipleChoice
-    };
+        QuestionsE q4 = new QuestionsE()
+        {
+            Qnumber = 4,
+            Question = "What Will Be The Result of the next arithmetic statement: \nint i = 5; i++",
+            Choices = new string[] { "a) 5", "b) 6", "c) 10", "d) 25" },
+            Answer = "b) 6",
+            Score = 10,
+            QuestionType = QuestionType.multipleChoice
+        };
 
 
 
-    QuestionsE q6 = new QuestionsE()
-    {
-        Qnumber = 6,
-        Question = "The output of string z \nstring x = \"10\"" +
-        "\nstring y = \"20\"; \nConsole.WriteLine(sum2)",
-        Choices = new string[] { "a) 30", "b) 1020", "c) 1200", "d) It would not compile" },
-        Answer = "d) It would not compile",
-        Score = 10,
-        QuestionType = QuestionType.multipleChoice
-    };
+        QuestionsE q5 = new QuestionsE()
+        {
+            Qnumber = 5,
+            Question = "The result printed in console for the next program is ? <br />int sum1 = 100 + 50;" +
+            "\nint sum2 = sum1 + 250; \nConsole.WriteLine(sum2)",
+            Choices = new string[] { "a) 250", "b) 150", "c) 400", "d) 500" },
+            Answer = "c) 400",
+            Score = 10,
+            QuestionType = QuestionType.multipleChoice
+        };
 
 
 
-    QuestionsE q7 = new QuestionsE()
-    {
-        Qnumber = 7,
-        Question = "What is the function of \\n ",
-        Choices = new string[] { "a) Backslash", "b) New Line", "c) Backspace", "d) Tab" },
-        Answer = "c) New line",
-        Score = 10,
-        QuestionType = QuestionType.multipleChoice
-    };
+        QuestionsE q6 = new QuestionsE()
+        {
+            Qnumber = 6,
+            Question = "The output of string z \nstring x = \"10\"" +
+            "\nstring y = \"20\"; \nConsole.WriteLine(sum2)",
+            Choices = new string[] { "a) 30", "b) 1020", "c) 1200", "d) It would not compile" },
+            Answer = "d) It would not compile",
+            Score = 10,
+            QuestionType = QuestionType.multipleChoice
+        };
 
 
 
-    QuestionsE q8 = new QuestionsE()
-    {
-        Qnumber = 8,
-        Question = "What does OOP stand for?",
-        Choices = new string[] { "a) Object Operating Programming",
-                    "b) Object Oriented Process", "c) Object Oriented Programming", "d) Operating Object Process" },
-        Answer = "c) Object Oriented Programming",
-        Score = 10,
-        QuestionType = QuestionType.multipleChoice
-    };
+        QuestionsE q7 = new QuestionsE()
+        {
+            Qnumber = 7,
+            Question = "What is the function of \\n ",
+            Choices = new string[] { "a) Backslash", "b) New Line", "c) Backspace", "d) Tab" },
+            Answer = "c) New line",
+            Score = 10,
+            QuestionType = QuestionType.multipleChoice
+        };
 
 
 
-    QuestionsE q9 = new QuestionsE()
-    {
-        Qnumber = 9,
-        Question = "Complete the statement: A class is a _______ for objects to be created.\n",
-        Choices = new string[] { "a) array", "b) ensemble", "c) variable", "d) blueprint" },
-        Answer = "d) blueprint",
-        Score = 10,
-        QuestionType = QuestionType.fillInGap
-    };
+        QuestionsE q8 = new QuestionsE()
+        {
+            Qnumber = 8,
+            Question = "What does OOP stand for?",
+            Choices = new string[] { "a) Object Operating Programming",
+                        "b) Object Oriented Process", "c) Object Oriented Programming", "d) Operating Object Process" },
+            Answer = "c) Object Oriented Programming",
+            Score = 10,
+            QuestionType = QuestionType.multipleChoice
+        };
 
 
 
-    QuestionsE q10 = new QuestionsE()
-    {
-        Qnumber = 10,
-        Question = "Var X = 12.5; What data type would X be?",
-        Choices = new string[] { "a) int", "b) double", "c) char", "d) string" },
-        Answer = "b) double",
-        Score = 10,
-        QuestionType = QuestionType.fillInGap
-    };
-
-    static Queue<QuestionsE> questions = new Queue<QuestionsE>();
-
-    void InitiateQueue()
-    {
-        questions.Enqueue(q1);
-        questions.Enqueue(q2);
-        questions.Enqueue(q3);
-        questions.Enqueue(q4);
-        questions.Enqueue(q5);
-        questions.Enqueue(q6);
-        questions.Enqueue(q7);
-        questions.Enqueue(q8);
-        questions.Enqueue(q9);
-        questions.Enqueue(q10);
-    }
-
-    QuestionsE Cq = questions.Peek();
+        QuestionsE q9 = new QuestionsE()
+        {
+            Qnumber = 9,
+            Question = "Complete the statement: A class is a _______ for objects to be created.\n",
+            Choices = new string[] { "a) array", "b) ensemble", "c) variable", "d) blueprint" },
+            Answer = "d) blueprint",
+            Score = 10,
+            QuestionType = QuestionType.fillInGap
+        };
 
 
-    void changeQuestion()
-    {
-        questions.Dequeue();
-    }
 
-}*/
+        QuestionsE q10 = new QuestionsE()
+        {
+            Qnumber = 10,
+            Question = "Var X = 12.5; What data type would X be?",
+            Choices = new string[] { "a) int", "b) double", "c) char", "d) string" },
+            Answer = "b) double",
+            Score = 10,
+            QuestionType = QuestionType.fillInGap
+        };
+
+        static Queue<QuestionsE> questions = new Queue<QuestionsE>();
+
+        void InitiateQueue()
+        {
+            questions.Enqueue(q1);
+            questions.Enqueue(q2);
+            questions.Enqueue(q3);
+            questions.Enqueue(q4);
+            questions.Enqueue(q5);
+            questions.Enqueue(q6);
+            questions.Enqueue(q7);
+            questions.Enqueue(q8);
+            questions.Enqueue(q9);
+            questions.Enqueue(q10);
+        }
+
+        QuestionsE Cq = questions.Peek();
+
+
+        void changeQuestion()
+        {
+            questions.Dequeue();
+        }
+
+    }*/
 }
 
 
 <body>
-    
+
 
     <div class="main-container">
-        
+
 
         <div class="box-curved">
             <div class="top">
-                <div class="question"><p></p></div>
+                <div class="question"><p> Questions</p></div>
             </div>
-            <div class="bottom">
-
-                <div class="textbox-curve"></div>
-                <div class="textbox-curve"></div>
-                <div class="textbox-curve"></div>
-                <div class="textbox-curve"></div>
-
-            </div>
-            <button type="submit"  class="nextButton"  runat="server" onclick="changeQuestion"  onServerClick="changeQuestion">Next</button>
             
+            <div class="bottom">
+                @foreach (var item in Model)
+                 {
+                                
+                 }
+                <p>Question </p>
 
-           
+                <div class="textbox-curve"></div>
+                <div class="textbox-curve"></div>
+                <div class="textbox-curve"></div>
+                <div class="textbox-curve"></div>
+
+            </div>
+            <button type="submit" class="nextButton" runat="server" onclick="changeQuestion" onServerClick="changeQuestion">Next</button>
+
+
+
 
         </div>
     </div>
@@ -198,7 +204,7 @@
 
 <style>
 
-    
+
 
     .main-container {
         display: grid;
@@ -212,7 +218,6 @@
     .top {
         background-color: white;
         height: 20vh;
-        
     }
 
     .bottom {
@@ -247,16 +252,13 @@
             transition: 0.5s;
             color: white;
         }
-        .nextButton
-        {
-            float:right;
-            margin-bottom:600px;
-            margin-right:300px;
-            height: 20%;
-            width: 20%;
-            
-        }
 
-        
+    .nextButton {
+        float: right;
+        margin-bottom: 600px;
+        margin-right: 300px;
+        height: 20%;
+        width: 20%;
+    }
 </style>
 
